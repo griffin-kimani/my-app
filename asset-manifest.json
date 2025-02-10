@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/my-app/static/css/main.d80dcb66.css",
-    "main.js": "/my-app/static/js/main.a6e8b871.js",
+    "main.css": "/my-app/static/css/main.33d82368.css",
+    "main.js": "/my-app/static/js/main.1d5e7f42.js",
     "static/media/background.jpg": "/my-app/static/media/background.1ff8b98a4ec3a68d2679.jpg",
     "static/media/istockphoto7.jpg": "/my-app/static/media/istockphoto7.a59679b4cfee0574b6cf.jpg",
     "static/media/istockphoto6.jpg": "/my-app/static/media/istockphoto6.261106a0d3d81d883c93.jpg",
@@ -11,11 +11,11 @@
     "static/media/istockphoto1.jpg": "/my-app/static/media/istockphoto1.2f2b86455ada31ff1f40.jpg",
     "static/media/istockphoto.jpg": "/my-app/static/media/istockphoto.2ce4b795bcb4ebfaa8a0.jpg",
     "index.html": "/my-app/index.html",
-    "main.d80dcb66.css.map": "/my-app/static/css/main.d80dcb66.css.map",
-    "main.a6e8b871.js.map": "/my-app/static/js/main.a6e8b871.js.map"
+    "main.33d82368.css.map": "/my-app/static/css/main.33d82368.css.map",
+    "main.1d5e7f42.js.map": "/my-app/static/js/main.1d5e7f42.js.map"
   },
   "entrypoints": [
-    "static/css/main.d80dcb66.css",
-    "static/js/main.a6e8b871.js"
+    "static/css/main.33d82368.css",
+    "static/js/main.1d5e7f42.js"
   ]
 }
