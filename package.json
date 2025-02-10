@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://griffin-kimani.github.io/my-app",
   "dependencies": {
     "cra-template": "1.2.0",
     "react": "^19.0.0",
@@ -10,12 +11,15 @@
     "react-router-dom": "^7.1.5",
     "react-scripts": "5.0.1"
   },
+ 
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+},
   "eslintConfig": {
     "extends": [
       "react-app",
