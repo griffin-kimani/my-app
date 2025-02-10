@@ -12,7 +12,6 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -24,29 +23,6 @@ const Navbar = () => {
     }
   };
 
-  useEffect(() => {
-    // Add event listeners programmatically
-    const homeLink = document.getElementById('home-link');
-    const aboutLink = document.getElementById('about-link');
-    const servicesLink = document.getElementById('services-link');
-    const contactLink = document.getElementById('contact-link');
-    const hamburger = document.getElementById('hamburger-menu');
-
-    if (homeLink) homeLink.addEventListener('click', () => handleScrollToSection('navbar'));
-    if (aboutLink) aboutLink.addEventListener('click', () => handleScrollToSection('about'));
-    if (servicesLink) servicesLink.addEventListener('click', () => handleScrollToSection('services'));
-    if (contactLink) contactLink.addEventListener('click', () => handleScrollToSection('contactus'));
-    if (hamburger) hamburger.addEventListener('click', () => setIsOpen((prev) => !prev));
-
-    return () => {
-      if (homeLink) homeLink.removeEventListener('click', () => handleScrollToSection('navbar'));
-      if (aboutLink) aboutLink.removeEventListener('click', () => handleScrollToSection('about'));
-      if (servicesLink) servicesLink.removeEventListener('click', () => handleScrollToSection('services'));
-      if (contactLink) contactLink.removeEventListener('click', () => handleScrollToSection('contactus'));
-      if (hamburger) hamburger.removeEventListener('click', () => setIsOpen((prev) => !prev));
-    };
-  }, []);
-
   const isTalkToUsPage = location.pathname === '/talktous';
 
   return (
@@ -56,21 +32,47 @@ const Navbar = () => {
           <img src={logo} alt="Logo" />
         </div>
 
-        <ul className="navbar-links">
+        {/* Conditionally add the active class */}
+        <ul className={`navbar-links ${isOpen ? 'active' : ''}`}>
           <li className="home-link">
             {isTalkToUsPage ? (
-              <Link to="/" id="home-link">Home</Link>
+              <Link to="/" id="home-link" onClick={() => { setIsOpen(false); handleScrollToSection('navbar'); }}>
+                Home
+              </Link>
             ) : (
-              <a id="home-link">Home</a>
+              <a id="home-link" onClick={() => { setIsOpen(false); handleScrollToSection('navbar'); }}>
+                Home
+              </a>
             )}
           </li>
-          <li><a id="about-link">About</a></li>
-          <li><a id="services-link">Services</a></li>
-          <li><a id="contact-link">Contact Us</a></li>
-          <li><Link to="/talktous">Talk to Us</Link></li>
+          <li>
+            <a id="about-link" onClick={() => { setIsOpen(false); handleScrollToSection('about'); }}>
+              About
+            </a>
+          </li>
+          <li>
+            <a id="services-link" onClick={() => { setIsOpen(false); handleScrollToSection('services'); }}>
+              Services
+            </a>
+          </li>
+          <li>
+            <a id="contact-link" onClick={() => { setIsOpen(false); handleScrollToSection('contactus'); }}>
+              Contact Us
+            </a>
+          </li>
+          <li>
+            <Link to="/talktous" onClick={() => setIsOpen(false)}>
+              Talk to Us
+            </Link>
+          </li>
         </ul>
 
-        <div id="hamburger-menu" className={`hamburger ${isOpen ? 'open' : ''}`}>
+        {/* Hamburger Menu */}
+        <div
+          id="hamburger-menu"
+          className={`hamburger ${isOpen ? 'open' : ''}`}
+          onClick={() => setIsOpen((prev) => !prev)}
+        >
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
