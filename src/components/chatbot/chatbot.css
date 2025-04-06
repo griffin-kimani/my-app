@@ -2,127 +2,131 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 1000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 999;
 }
 
 .chatbot-icon {
-  background-color: #008cba;
+  background-color: #0078d4;
+  color: #fff;
+  padding: 15px;
+  font-size: 24px;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
-  color: white;
-  font-size: 30px;
-  transition: all 0.3s ease-in-out;
-}
-
-.chatbot-icon:hover {
-  background-color: #005f8c;
-}
-
-.chatbot {
-  width: 340px;
-  height: 400px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-  animation: fadeIn 0.5s;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.chatbot-header {
-  background-color: #008cba;
-  color: white;
-  padding: 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.chatbot-header h3 {
-  margin: 0;
-  font-size: 18px;
-}
-
-.close-btn {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.close-btn:hover {
-  color: #ff6347;
-}
-
-.chatbot-form {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 5px;
-}
-
-.form-group input, .form-group textarea {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  font-size: 14px;
-  outline: none;
-  transition: border 0.2s;
-}
-
-.form-group input:focus, .form-group textarea:focus {
-  border-color: #008cba;
-}
-
-.chatbot-form button {
-  background-color: #008cba;
-  border: none;
-  color: white;
-  padding: 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   transition: background-color 0.3s;
 }
 
-.chatbot-form button:hover {
-  background-color: #005f8c;
+.chatbot-icon:hover {
+  background-color: #005fa3;
 }
 
-.chatbot-messages {
-  padding: 20px;
-  text-align: center;
+.chatbot-notification {
+  background-color: #0078d4;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  cursor: pointer;
+  animation: slideUp 0.4s ease-out;
 }
 
-.message-text {
-  background-color: #008cba;
+.chatbot {
+  background: #fff;
+  width: 300px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatbot-header {
+  background: #0078d4;
   color: white;
-  padding: 15px;
-  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-form {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 12px;
+}
+
+.chatbot-form input,
+.chatbot-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.chatbot-form textarea {
+  resize: none;
+  min-height: 80px;
+}
+
+.chatbot-form button {
+  background: #0078d4;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.chatbot-form button:hover {
+  background: #005fa3;
+}
+
+.success-message {
+  text-align: center;
+  background-color: #d4f8e8;
+  padding: 24px;
+  color: #0f6848;
   font-size: 16px;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 120, 212, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 120, 212, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 120, 212, 0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.chatbot-fade-in {
+  animation: slideUp 0.3s ease-out;
 }
