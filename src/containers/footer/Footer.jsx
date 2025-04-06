@@ -20,12 +20,14 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="contact">
             <h3>Contact Us</h3>
-            <div className="contact-box">
-              <p>Phone: +254 (757) 573 444</p>
-              <p>Phone: +254 (718) 279 984</p>
-              <p>Email: techsynergysolutions@gmail.com</p>
-            </div>
-          </div>
+            
+          <div className="contact-box">
+  <p><a href="tel:+254757573444">Phone: +254 (757) 573 444</a></p>
+  <p><a href="tel:+254718279984">Phone: +254 (718) 279 984</a></p>
+  <p><a href="mailto:techsynergysolutions@gmail.com">Email: techsynergysolutions@gmail.com</a></p>
+</div>
+</div>
+
 
           <div className="socials">
             <h3>Follow Us</h3>
